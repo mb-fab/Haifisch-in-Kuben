@@ -1,5 +1,5 @@
 
-include <global.scad>;
+include <config.scad>;
 
 /**
  * One of the two planes lying in XZ layer

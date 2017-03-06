@@ -1,6 +1,6 @@
 
-include <global.scad>;
-use <joint.scad>;
+include <config.scad>;
+use <hook.scad>;
 
 /**
  * One of the two planes lying in YZ layer

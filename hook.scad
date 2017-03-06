@@ -1,5 +1,5 @@
 
-include <global.scad>;
+include <config.scad>;
 
 module joint()
 {

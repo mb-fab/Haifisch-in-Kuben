@@ -1,7 +1,8 @@
 
-include <global.scad>;
+include <config.scad>;
 use <face_x.scad>;
 use <face_y.scad>;
+use <face_z.scad>;
 
 module base_material()
 {
@@ -81,3 +82,7 @@ translate([
     0
     ])
     project_face_y();
+
+color("yellow")
+projection()
+face_z();

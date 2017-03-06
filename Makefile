@@ -1,17 +1,14 @@
 
 all: projection.svg
 
-%.svg: %.scad
-	openscad $< -o temp.svg
+projection.svg: global.scad model.scad projection.scad face_x.scad face_y.scad face_z.scad
+	openscad projection.scad -o temp.svg
 	cat temp.svg | sed \
-		-e "s/lightgray/none/" \
-		-e "s/black/red/" \
-		-e "s/\"0.5\"/\"0.1px\"/" \
-		-e "s/\([0-9]\+\)\([, ]\)/\1mm\2/g" \
-		-e "s/\(\[0-9]\+\.[0-9]\+\)/\1mm/g" \
+		-e "s/fill=\"lightgray\"//" \
+		-e "s/stroke=\"black\"/stroke=\"red\"/" \
 		> $@
-#	inkscape temp2.svg --without-gui --export-area-drawing --export-plain-svg=$@
 	rm temp*.svg
 
 clean:
 	rm -fr temp*.svg projection.svg
+

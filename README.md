@@ -1,7 +1,7 @@
-Fully parameterizeable OpenSCAD 3d model of a column / table leg with joints for laser cutting
+Modell einer quaderf&ouml;rmigen Gussform
 
-License: GNU GPLv3 or CC-BY-SA at your option
+Lizenz: GNU GPLv3
 
-<img src="https://raw.githubusercontent.com/mb-fab/table-leg/master/table_leg.jpg"/>
+<img src="https://raw.githubusercontent.com/mb-fab/Quader-Gussform/master/model.jpg"/>
 
-<img src="https://raw.githubusercontent.com/mb-fab/table-leg/master/projection.jpg"/>
+<img src="https://raw.githubusercontent.com/mb-fab/Quader-Gussform/master/projection.jpg"/>
