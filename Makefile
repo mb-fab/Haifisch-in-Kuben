@@ -23,7 +23,7 @@ projection-red.svg: projection.svg
 projection-hairline.svg: projection-red.svg
 	cat $< | sed \
 		-e "s/stroke-width=\"\([0-9]*\.[0-9]*\)\"//g" \
-		-e "s/stroke=\"red\"/stroke=\"red\" stroke-width=\"0.1\"/g" \
+		-e "s/stroke=\"red\"/stroke=\"red\" stroke-width=\"0.01\"/g" \
 		> $@
 
 clean:

@@ -5,7 +5,7 @@
  * Base material to cut from
  */
 material_x = 370;
-material_y = 110;
+material_y = 50;
 material_z = 3;
 
 /*
@@ -21,9 +21,9 @@ cuboid_x = shark_length / 2;
 cuboid_y = cuboid_x+20;
 cuboid_z = cuboid_x+40;
 */
-cuboid_x = 40;
-cuboid_y = 45;
-cuboid_z = 50;
+cuboid_x = 20;
+cuboid_y = 25;
+cuboid_z = 30;
 
 /*
  * Save some calculations
@@ -45,8 +45,8 @@ relative_nose_length = 0.2;
  * Rendering and projection properties
  */
 // how far apart from on another to project the parts
-projection_spacing = 2;
+projection_spacing = 1;
 // how far from the border of the material to begin placing
-projection_margin = 5;
+projection_margin = 1;
 // rendering quality (face number)
 $fn = 50;
