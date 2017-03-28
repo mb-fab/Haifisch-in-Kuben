@@ -1,12 +1,8 @@
 
-all: model.png parts.png projection-hairline.svg
+all: model.png shark.png parts.png parts2.png projection-hairline.svg
 
 # generate previews
-model.png: model.scad config.scad noses.scad face_xy.scad face_yz.scad face_xz.scad
-	openscad $< --preview -o $@
-	convert $@ -trim $@
-
-parts.png: parts.scad config.scad noses.scad face_xy.scad face_yz.scad face_xz.scad
+%.png: %.scad config.scad noses.scad face_xy.scad face_yz.scad face_xz.scad shark.scad parts.scad parts2.scad
 	openscad $< --preview -o $@
 	convert $@ -trim $@
 
@@ -27,5 +23,5 @@ projection-hairline.svg: projection-red.svg
 		> $@
 
 clean:
-	rm -fr model.png parts.png projection*.svg
+	rm -fr *.png projection*.svg
 

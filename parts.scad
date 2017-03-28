@@ -30,19 +30,12 @@ module layout()
         0
         ])
     face_xy();
-    b = a + cuboid_x + 2*material_z + projection_spacing;
 
-    translate([
-        cuboid_x_2 + material_z + b,
-        cuboid_y_2 + material_z + projection_margin,
-        0
-        ])
-    face_xy();
-    c = b + cuboid_x + 2*material_z + projection_spacing;
+    b = a + cuboid_x + 2*material_z + projection_spacing;
 
     // model's z axis is now x
     translate([
-        cuboid_z_2 + material_z + c,
+        cuboid_z_2 + material_z + b,
         cuboid_y_2 + material_z + projection_margin,
         0
         ])
@@ -53,6 +46,16 @@ module layout()
         0
         ])
     face_yz();
+
+    c = b + cuboid_x + 2*material_z + projection_spacing;
+
+    translate([
+        cuboid_x_2 + material_z + c,
+        cuboid_y_2 + material_z + projection_margin,
+        0
+        ])
+    face_xy();
+
     d = c + cuboid_z + 2*material_z + projection_spacing;
 
     // model's z axis is now x
@@ -85,6 +88,7 @@ module layout()
     face_xz();
     f = e + cuboid_x + 2*material_z + projection_spacing;
 
+    /*
     // model's z axis is now y
     translate([
         cuboid_x_2 + material_z + f,
@@ -98,6 +102,7 @@ module layout()
         0
         ])
     face_xz();
+    */
 }
 
 base_material();
