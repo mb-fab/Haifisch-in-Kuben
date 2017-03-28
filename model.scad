@@ -1,40 +1,53 @@
 
 include <config.scad>;
-use <hook.scad>;
-use <face_x.scad>;
-use <face_y.scad>;
-use <face_z.scad>;
+use <face_xy.scad>;
+use <face_yz.scad>;
+use <face_xz.scad>;
 
-// font
+// bottom
 translate([
     0,
-    -leg_y/2,
+    0,
+    - cuboid_z_2 - material_z_2
+    ])
+ face_xy();
+
+// top
+translate([
+    0,
+    0,
+    + cuboid_z_2 + material_z_2
+    ])
+ face_xy();
+
+// left
+translate([
+    - cuboid_x_2 - material_z_2,
+    0,
     0
     ])
- face_x();
+face_yz();
+
+// right
+translate([
+    + cuboid_x_2 + material_z_2,
+    0,
+    0
+    ])
+face_yz();
 
 // back
 translate([
     0,
-    +leg_y/2,
+    + cuboid_y_2 + material_z_2,
     0
     ])
- face_x();
+face_xz();
 
-// left
+// front
 translate([
-    -leg_x/2 + face_y_inset,
     0,
+    - cuboid_y_2 - material_z_2,
     0
     ])
-face_y();
-
-// right
-translate([
-    +leg_x/2 - face_y_inset,
-    0,
-    0
-    ])
-face_y();
-
-face_z();
+face_xz();

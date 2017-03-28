@@ -1,7 +1,6 @@
-Modell einer quaderf&ouml;rmigen Gussform
+Quader mit parametrisierten Innenma&szlig;en und Burgzinnen-Kanten
 
-Lizenz: GNU GPLv3
+Lizenz: wahlweise GNU GPLv3 oder CC-BY-SA
 
-<img src="https://raw.githubusercontent.com/mb-fab/Quader-Gussform/master/model.jpg"/>
+<img src="https://raw.githubusercontent.com/mb-fab/Haifisch-in-Kuben/master/model.png"/>
 
-<img src="https://raw.githubusercontent.com/mb-fab/Quader-Gussform/master/projection.jpg"/>
