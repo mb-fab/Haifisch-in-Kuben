@@ -1,19 +1,31 @@
 
-all: model.png projection.svg
+all: model.png parts.png projection-hairline.svg
 
-# generate preview
+# generate previews
 model.png: model.scad config.scad noses.scad face_xy.scad face_yz.scad face_xz.scad
 	openscad $< --preview -o $@
+	convert $@ -trim $@
 
-# other SCAD files are mentioned, to track their changes, too
+parts.png: parts.scad config.scad noses.scad face_xy.scad face_yz.scad face_xz.scad
+	openscad $< --preview -o $@
+	convert $@ -trim $@
+
+# other SCAD files are mentioned, to have make track their changes, too
 projection.svg: projection.scad config.scad noses.scad face_xy.scad face_yz.scad face_xz.scad
-	openscad $< -o temp.svg
-	cat temp.svg | sed \
-		-e "s/fill=\"lightgray\"//" \
+	openscad $< -o $@
+
+projection-red.svg: projection.svg
+	cat $< | sed \
+		-e "s/fill=\"lightgray\"/fill=\"none\"/" \
 		-e "s/stroke=\"black\"/stroke=\"red\"/" \
 		> $@
-	rm temp*.svg
+
+projection-hairline.svg: projection-red.svg
+	cat $< | sed \
+		-e "s/stroke-width=\"\([0-9]*\.[0-9]*\)\"//g" \
+		-e "s/stroke=\"red\"/stroke=\"red\" stroke-width=\"0.1\"/g" \
+		> $@
 
 clean:
-	rm -fr model.png temp*.svg projection.svg
+	rm -fr model.png parts.png projection*.svg
 
